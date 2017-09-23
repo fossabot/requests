@@ -1,0 +1,33 @@
+{
+  "name": "@proux/requests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Collection of Request-Functions to Partner APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "author": "Nico Lindemann <nico.lindemann@proux.net>",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.0",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^4.7.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
