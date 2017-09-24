@@ -16,13 +16,14 @@ const requestFns = {
     })).json()
   },
 
-  stripe: async (action, args, method) => {
+  stripe: async (action, args, method, bodyData) => {
     const url = 'https://api.stripe.com/v1/' + action + (args ? '?' + qs.stringify(args) : '')
     return (await fetch(url, {
       method: !method ? 'GET' : method,
       headers: {
         'Authorization': 'Bearer ' + process.env.PROUX_STRIPE_SECRET
-      }
+      },
+      body: bodyData
     })).json()
   },
 
