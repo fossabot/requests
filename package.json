@@ -1,6 +1,6 @@
 {
   "name": "@proux/requests",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Collection of Request-Functions to Partner APIs",
   "main": "index.js",
