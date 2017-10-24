@@ -1,5 +1,8 @@
 const qs = require('querystring')
 const fetch = require('node-fetch')
+const https = require('https')
+
+https.globalAgent.options.secureProtocol = "TLSv1_2_method"
 
 const requestFns = {
   facebook: async (args, token) => {
