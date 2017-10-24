@@ -2,7 +2,9 @@ const qs = require('querystring')
 const fetch = require('node-fetch')
 const https = require('https')
 
-https.globalAgent.options.secureProtocol = "TLSv1_2_method"
+const agent = new https.Agent({
+  secureProtocol: 'TLSv1_2_method'
+})
 
 const requestFns = {
   facebook: async (args, token) => {
@@ -32,6 +34,7 @@ const requestFns = {
 
   httpNet: async (scope, action) => {
     return (await fetch('https://partner.http.net/api/' + scope + '/v1/json/' + action, {
+      agent: agent,
       method: 'POST',
       body: JSON.stringify({
         limit: '1000',
