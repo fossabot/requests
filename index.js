@@ -1,9 +1,11 @@
 const qs = require('querystring')
 const fetch = require('node-fetch')
 const https = require('https')
+const constants = require('constants')
 
 const agent = new https.Agent({
-  secureProtocol: 'TLSv1_2_method'
+  secureProtocol: 'TLSv1_2_method',
+  secureOptions: constants.SSL_OP_NO_SSLv3 | constants.SSL_OP_NO_SSLv2
 })
 
 const requestFns = {
